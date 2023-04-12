@@ -40,3 +40,4 @@ def registrieren(benutzer_collection):
 
 verbinde_server()
 
+#Ersetzte <username> , <password> und <Atlas Clusters> durch deine Daten von MongoDB.
