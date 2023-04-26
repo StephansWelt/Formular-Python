@@ -36,7 +36,12 @@ def anmelden(benutzer_collection):
 #Definiere registrierungs Formular
 def registrieren(benutzer_collection):
     benutzername = input(green("Gib einen Benutzernamen ein: "))
-    passwort = input(green("Gib ein Passwort ein: "))
+    while True:
+        passwort = input(green("Gib ein Passwort ein (mindestens 5 Zeichen): "))
+        if len(passwort) < 5:
+            print(red("Das Passwort muss mindestens 5 Zeichen lang sein."))
+        else:
+            break
     benutzer = {"benutzername": benutzername, "passwort": passwort}
     benutzer_collection.insert_one(benutzer)
     print(blue(f"Herzlich Willkommen {benutzername}!"))
