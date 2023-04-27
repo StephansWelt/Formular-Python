@@ -42,7 +42,7 @@ def anmelden(benutzer_collection):
             benutzer["login_attempts"] = benutzer.get("login_attempts", 0) + 1
             if benutzer["login_attempts"] >= 3:
                 benutzer["locked"] = True
-                print(red("Zu viele falsche Anmeldeversuche. Konto gesperrt."))
+                print(red("Du hast zu offt das Falsche Password eingetragen und dein Account wurde gesperrt. Bitte wende dich an den support!"))
             benutzer_collection.update_one({"benutzername": benutzername}, {"$set": benutzer})
             if benutzer.get("locked"):
                 return
