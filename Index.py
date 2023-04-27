@@ -8,7 +8,7 @@ from simple_colors import *
 #definiere verbindung zum Server | Abfrage für Anmelden oder registrieren
 def verbinde_server():
     print(red("Verbinde zum Server..."))
-    client = pymongo.MongoClient("mongodb+srv://PythonAF:PythonAF@blitzbot.k3jmp5m.mongodb.net/test?retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb+srv://<username>:<password>@blitzbot.k3jmp5m.mongodb.net/test?retryWrites=true&w=majority")
     db = client["meine_db"]
     benutzer_collection = db["benutzer"]
     time.sleep(1)
