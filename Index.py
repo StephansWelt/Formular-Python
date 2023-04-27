@@ -30,7 +30,7 @@ def anmelden(benutzer_collection):
         return
 
     if benutzer.get("locked"):
-        print(red("Konto gesperrt. Bitte kontaktiere den Support."))
+        print(red("Konto gesperrt. Bitte kontaktiere den Adminstrator."))
         return
     if benutzername == "EinfxchPingu":
         benutzername = f"Admin | {benutzername}"
@@ -78,9 +78,7 @@ def generiere_code():
 # Funktion zum Entsperren eines Benutzers
 # Funktion zum Entsperren eines Benutzers
 def entsperren(benutzername, benutzer_collection):
-    if benutzername == "EinfxchPingu":
-        print(red("Dazu hast du keine Rechte!"))
-    else:
+    if benutzername == "EinfxchPingu":    
         if input(blue("Möchtest du einen Benutzer entsperren? (j/n) ")) == "j":
             benutzername = input(green("Gib den Benutzernamen des zu entsperrenden Benutzers ein: "))
             benutzer = benutzer_collection.find_one({"benutzername": benutzername})
@@ -94,7 +92,8 @@ def entsperren(benutzername, benutzer_collection):
                     benutzer["login_attempts"] = 0
                     benutzer_collection.update_one({"benutzername": benutzername}, {"$set": benutzer})
                     print(blue(f"Der Benutzer {benutzername} wurde erfolgreich entsperrt."))
-
+    else:
+        print(red("Dazu hast du keine Rechte!"))
 
 
 def Hauptmenü(benutzername, benutzer_collection):
