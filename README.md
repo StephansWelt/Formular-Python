@@ -9,4 +9,4 @@ Hier ein paar Dinge die du brauchst um das Programm zu starten:
 - erstelle dir ein Closter
 - verbinde dein Closter mit deinem Code auf Zeile 10
 
-Admin Konto -> EinfxchPingu (Stephan#6002 Discord)
+Probleme? -> Discord -> EinfxchPingu#6002
