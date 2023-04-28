@@ -77,8 +77,9 @@ def generiere_code():
 
 # Funktion zum Entsperren eines Benutzers
 # Funktion zum Entsperren eines Benutzers
+# Funktion zum Entsperren eines Benutzers
 def entsperren(benutzername, benutzer_collection):
-    if benutzername == "EinfxchPingu":    
+    if benutzername == "EinfxchPingu":
         if input(blue("Möchtest du einen Benutzer entsperren? (j/n) ")) == "j":
             benutzername = input(green("Gib den Benutzernamen des zu entsperrenden Benutzers ein: "))
             benutzer = benutzer_collection.find_one({"benutzername": benutzername})
@@ -94,7 +95,6 @@ def entsperren(benutzername, benutzer_collection):
                     print(blue(f"Der Benutzer {benutzername} wurde erfolgreich entsperrt."))
     else:
         print(red("Dazu hast du keine Rechte!"))
-
 
 def Hauptmenü(benutzername, benutzer_collection):
     print()
