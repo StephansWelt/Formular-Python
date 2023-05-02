@@ -8,10 +8,11 @@ from simple_colors import *
 #definiere verbindung zum Server | Abfrage für Anmelden oder registrieren
 def verbinde_server():
     print(red("Verbinde zum Server..."))
-    client = pymongo.MongoClient("mongodb+srv://<username>:<password>@<closter>.k3jmp5m.mongodb.net/test?retryWrites=true&w=majority")
-    db = client["meine_db"]
-    benutzer_collection = db["benutzer"]
-    time.sleep(0.5)
+    try:
+        client = pymongo.MongoClient("mongodb+srv://<username>:<password>@<closter>.k3jmp5m.mongodb.net/test?retryWrites=true&w=majority")
+        db = client["mein_db"]
+    except pymongo.errors.ConnectionFailure as e:
+        print("Verbindung zur MongoDB-Datenbank konnte nicht hergestellt werden:", e)
     auswahl = input(blue("Willst du dich anmelden oder registrieren? (a/r) ","bold"))
     if auswahl.lower() == "a":
         anmelden(benutzer_collection)
